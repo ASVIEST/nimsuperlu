@@ -1,0 +1,3 @@
+[submodule "src/nimsuperlu/C/superlu"]
+	path = src/nimsuperlu/C/superlu
+	url = https://github.com/xiaoyeli/superlu.git
