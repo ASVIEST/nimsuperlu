@@ -109,7 +109,10 @@ type
     NPHASES = 22
   PhaseType* = enum_PhaseType
 const LargeDiag_AWPM* = LargeDiag_HWPM
-type int_t* = cint
+when idxSize == 64:
+  type int_t* = int64
+else:
+  type int_t* = cint
 const HAVE_COLAMD* = 1
 type
   enum_Stype_t* {.pure, size:sizeof(cint), importc:"Stype_t", header:"supermatrix.h".} = enum
