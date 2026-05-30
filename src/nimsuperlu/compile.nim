@@ -184,6 +184,17 @@ const srcDir = thisDir / "C" / "superlu" / "SRC"
 {.compile: srcDir / "zsp_blas2.c".}
 {.compile: srcDir / "zsp_blas3.c".}
 {.compile: srcDir / "zutil.c".}
+const idxSize {.define: "nimsuperlu.idxSize".} = 32
+const configDir = thisDir / "C"
+
+when idxSize == 32:
+  {.passC: "-DNIMSUPERLU_IDX_SIZE=32".}
+elif idxSize == 64:
+  {.passC: "-DNIMSUPERLU_IDX_SIZE=64".}
+else:
+  {.error: "Uncorrect superlu idx size, avalible options: {32, 64}".}
+
+{.passC: "-I" & configDir.}
 {.passC: "-I" & srcDir.}
 {.passC: "-include superlu_config.h".}
 
