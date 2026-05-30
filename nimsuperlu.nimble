@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.2.0"
+version       = "0.2.1"
 author        = "ASVIEST"
 description   = "SuperLU sparse direct solver nim bindings"
 license       = "BSD-3-Clause"
